@@ -9,3 +9,119 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model socials {
+  id       Int    @id @default(autoincrement())
+  facebook String @db.VarChar(300)
+  youtube  String @db.VarChar(300)
+  twitter  String @db.VarChar(300)
+  linkedin String @db.VarChar(300)
+  about    String @db.LongText
+  address  String @db.LongText
+
+  createAt DateTime @default(now()) @db.Timestamp(0)
+  updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+model categories {
+  id   Int    @id @default(autoincrement())
+  name String @unique @db.VarChar(100)
+  news_list news_list []
+  createAt DateTime @default(now()) @db.Timestamp(0)
+  updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+model features {
+  id   Int    @id @default(autoincrement())
+  name String @unique @db.VarChar(100)
+  news_list news_list []
+
+  createAt DateTime @default(now()) @db.Timestamp(0)
+  updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+model news_list {
+  id        Int    @id @default(autoincrement())
+  title     String @db.VarChar(300)
+  short_des String @db.VarChar(300)
+  thumnail  String @db.VarChar(300)
+
+  feature_id Int 
+  category_id Int
+  features features @relation(fields: [feature_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+  categories categories @relation(fields: [category_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+
+  news_sliders news_sliders?
+  news_details news_details?
+  comments comments []
+
+  createAt DateTime @default(now()) @db.Timestamp(0)
+  updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+model news_details {
+  id       Int    @id @default(autoincrement())
+  long_des String @db.LongText
+  img_1    String @db.VarChar(300)
+  img_2    String @db.VarChar(300)
+  img_3    String @db.VarChar(300)
+
+  news_id Int @unique
+  news_list news_list  @relation(fields: [news_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+
+  createAt DateTime @default(now()) @db.Timestamp(0)
+  updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+model news_sliders {
+  id          Int    @id @default(autoincrement())
+  short_title String @db.VarChar(100)
+  img         String @db.VarChar(300)
+
+  news_id Int @unique
+  news_list news_list @relation(fields: [news_id],references: [id],onDelete: Restrict,onUpdate: Cascade) 
+
+  createAt DateTime @default(now()) @db.Timestamp(0)
+  updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+model comments {
+  id      Int    @id @default(autoincrement())
+  comment String @db.LongText
+
+  user_id Int
+  news_id Int
+  
+  users users  @relation(fields: [user_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+  news_list news_list @relation(fields: [news_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+  createAt DateTime @default(now()) @db.Timestamp(0)
+  updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+model users {
+  id        Int    @id @default(autoincrement())
+  firstName String @db.VarChar(50)
+  lastName  String @db.VarChar(50)
+  phone     String @db.VarChar(50)
+  email     String @unique @db.VarChar(50)
+  password  String @db.VarChar(50)
+  otp       String @db.VarChar(50)
+
+  comment_id Int
+  comments comments []
+  profiles profiles?
+
+  createAt DateTime @default(now()) @db.Timestamp(0)
+  updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+model profiles{
+  id        Int    @id @default(autoincrement())
+
+
+  user_id Int @unique
+  users users @relation(fields: [user_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+
+  createAt DateTime @default(now()) @db.Timestamp(0)
+  updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
