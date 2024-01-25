@@ -1,4 +1,3 @@
-import { sendEmail } from '@/utility/email/EmailHandler';
 import { PrismaClient } from '@prisma/client'
 import { NextResponse } from 'next/server'
 
