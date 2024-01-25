@@ -107,7 +107,6 @@ model users {
   password  String @db.VarChar(50)
   otp       String @db.VarChar(50)
 
-  comment_id Int
   comments comments []
   profiles profiles?
 
