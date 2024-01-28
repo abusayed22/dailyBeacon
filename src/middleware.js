@@ -8,7 +8,7 @@ export async function middleware(req,res) {
         const payload = await verifyToken(token['value']);
         const reqHeader = new Headers(req.headers);
         reqHeader.set("email",payload["email"]);
-        reqHeader.set("id",reqHeader["id"])
+        reqHeader.set("id",payload["id"])
         
 
         return NextResponse.next({request:{headers:reqHeader}})
