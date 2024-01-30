@@ -48,7 +48,6 @@ model news_list {
 
   feature_id Int 
   category_id Int
-  type type
   features features @relation(fields: [feature_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
   categories categories @relation(fields: [category_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
 
@@ -126,9 +125,13 @@ model profiles{
   updateAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
 
-enum type{
-  latest
-  popular
-  national
-  international
-}
+
+
+
+
+
+
+
+
+
+

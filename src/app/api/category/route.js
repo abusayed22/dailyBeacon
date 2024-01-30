@@ -5,7 +5,12 @@ import { NextResponse } from 'next/server';
 export async function GET(req,res) {
     try {
         const prisma = new PrismaClient();
-        const res = await prisma.categories.findMany();
+        const res = await prisma.categories.findMany({
+            select:{
+                id:true,
+                name:true
+            }
+        });
 
         return NextResponse.json({status:'success', data: res})
 
@@ -20,7 +25,7 @@ export async function POST(req,res) {
         const prisma = new PrismaClient();
         const reqData= await req.json()
         const res = await prisma.categories.create({
-            data:reqData
+            data:reqData,
         })
 
         return NextResponse.json({status:'success', data: res})
