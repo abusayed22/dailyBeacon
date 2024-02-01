@@ -1,16 +1,9 @@
-import { NextRequest } from 'next/server';
+import React from 'react'
 
-
-function DetailsNews({ query }) {
-  
-  const searchParams = query;
-  
-
+function DetailsCart() {
   return (
-    <div>
-      <div className="max-w-screen-lg mx-auto">
-
-        <main className="mt-10">
+    <>
+      <main className="mt-10">
           <div className="mb-4 md:mb-0 w-full mx-auto relative">
             <div className="px-4 lg:px-0">
               <h2 className="text-4xl font-semibold text-gray-800 leading-tight">
@@ -69,12 +62,8 @@ function DetailsNews({ query }) {
             </div>
           </div>
         </main>
-        {/* main ends here */}
-
-      </div>
-
-    </div>
+    </>
   )
 }
 
-export default DetailsNews
+export default DetailsCart

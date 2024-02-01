@@ -16,14 +16,14 @@ async function PopularNews() {
   console.log(data["news_feature"])
   return (
     <>
-
       {/* ====== Blog Section Start */}
       <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
         <div className="">
           <NewsTitle title={"Popular"} />
           <div className='flex flex-wrap justify-center container mx-auto gap-12'>
           {
-              data?.news_list?.map((item,i) => (
+            
+            data["news_feature"].map((item,i) => (
                 <NewsCart key={i} news={item} features={data["features"]}/>
               ))
             }

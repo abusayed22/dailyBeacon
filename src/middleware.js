@@ -1,5 +1,5 @@
 import {NextResponse} from 'next/server'
-import { verifyToken } from './utility/token/JWTTokenHandler'
+import { verifyToken } from './utility/token/JWTTokenHandler';
 
 
 export async function middleware(req,res) {

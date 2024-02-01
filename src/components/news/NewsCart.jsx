@@ -1,13 +1,16 @@
 "use client"
 
+import { useRouter } from "next/navigation";
 import { IoStarSharp } from "react-icons/io5";
 
 function NewsCart({ news, features }) {
+    const router = useRouter();
+
 
     return (
         <>
             {
-                <div className="flex flex-wrap -mx-4 cursor-pointer">
+                <div className="flex flex-wrap -mx-4 cursor-pointer" onClick={() => router.push(`/details-news?id=${news.id}`)}>
                     <div className="max-w-[400px] font-sans border shadow-lg rounded-lg mx-auto">
                         <div className="px-4 py-4 flex gap-10 justify-between items-center">
                             {/* Avatar image  */}
@@ -62,10 +65,10 @@ function NewsCart({ news, features }) {
 
                         {/* Post content */}
                         <div className="mt-2 px-4">
-                            <h2 className=" text-xl font-semibold">My new paintings</h2>
-                            <h2 className="py-1  text-sm ">
+                            <h2 className=" text-xl font-bold p-1 text-purple-400"> {news?.title}</h2>
+                            {/* <h2 className="py-1  text-sm ">
                                 {news?.title}
-                            </h2>
+                            </h2> */}
                         </div>
 
                         {/* icons */}
