@@ -1,6 +1,6 @@
 import GenaralLayout from '@/components/master/GenaralLayout'
 import DetailsNews from '@/components/news/DetailsNews'
-// import { useRouter } from 'next/router';
+import { headers } from 'next/headers';
 
 // fetching data 
 const getData = async (id) => {
@@ -9,12 +9,16 @@ const getData = async (id) => {
 }
 
 async function page() {
-  // const router = useRouter() TODO: how to get search params in server component in nextjs
-  const data= await getData()
+  const headersList = headers();
+  const reqId = headersList.get('id') || "";
+
+  
+  const data= await getData(reqId)
+  
+ 
   return (
     <GenaralLayout>
-      <DetailsNews />
-      <hr />
+      <DetailsNews data={data}/>
     </GenaralLayout>
   )
 }

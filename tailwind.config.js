@@ -4,7 +4,9 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/keep-react/**/*.{js,jsx,ts,tsx}",
   ],
+  presets: [require("keep-react/preset")],
   theme: {
     extend: {
       backgroundImage: {
@@ -12,7 +14,12 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors:{
+        main_color: "#C70039",
+        secondary_color: "#5499C7 ",
+      }
     },
   },
   plugins: [],
+  
 };

@@ -7,7 +7,8 @@ export async function GET(req,res) {
         const {searchParams} = new URL(req.url);
         const id = parseInt(searchParams.get("id"))
         const res = await prisma.news_details.findUnique({
-            where: {id:id}
+            where: {news_id:id},
+            
         });
 
         return NextResponse.json({status:'success', data: res})

@@ -1,9 +1,8 @@
 import { NextRequest } from 'next/server';
 
 
-function DetailsNews({ query }) {
+function DetailsNews() {
   
-  const searchParams = query;
   
 
   return (
@@ -14,8 +13,7 @@ function DetailsNews({ query }) {
           <div className="mb-4 md:mb-0 w-full mx-auto relative">
             <div className="px-4 lg:px-0">
               <h2 className="text-4xl font-semibold text-gray-800 leading-tight">
-                Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales,
-                massa et auctor.
+                
               </h2>
               <a
                 href="#"
@@ -25,7 +23,7 @@ function DetailsNews({ query }) {
               </a>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1587614387466-0a72ca909e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
+              src=""
               className="w-full object-cover lg:rounded"
               style={{ height: "28em" }}
             />
