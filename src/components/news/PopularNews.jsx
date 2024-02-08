@@ -1,5 +1,5 @@
 
-import NewsTitle from './NewsTitle'
+import NewsTitle from '../reuseble/NewsTitle'
 import NewsCart from './NewsCart'
 
 
@@ -20,7 +20,7 @@ async function PopularNews() {
       <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
         <div className="">
           <NewsTitle title={"Popular"} />
-          <div className='flex flex-wrap justify-center container mx-auto gap-12'>
+          <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {
             
             data["news_feature"].map((item,i) => (

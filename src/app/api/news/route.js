@@ -24,7 +24,6 @@ export async function POST(req,res) {
     try {
         const prisma = new PrismaClient();
         const reqData = await req.json()
-        console.log("reqData")
         const res = await prisma.news_list.create({
             data:{
                 title: reqData["title"],
@@ -53,7 +52,6 @@ export async function POST(req,res) {
         return NextResponse.json({status:'success', data: res})
 
     } catch (error) {
-        console.log(error)
         return NextResponse.json({status:'failed!', data: error})
     }
 }

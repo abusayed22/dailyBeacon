@@ -13,13 +13,13 @@ function Subscription() {
         <div class="overflow-hidden bg-white rounded-md shadow-md">
             <div class="px-4 py-6 sm:px-8 sm:py-7">
                 <div class="text-center">
-                    <h2 class="text-3xl font-bold text-yellow-500">Subscibe</h2>
+                    <h2 class="text-3xl font-bold text-simple">Subscibe</h2>
                 </div>
 
                 <form action="#" method="POST" class="mt-8">
                     <div class="space-y-5">
                         <div>
-                            <label for="" class="text-base font-medium text-gray-900"> Email address </label>
+                            <label for="" class="text-base font-medium text-simple"> Email address </label>
                             <div class="mt-2.5">
                                 <input type="email" name="" id="" placeholder="Enter email to get started" class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600" />
                             </div>
@@ -28,7 +28,7 @@ function Subscription() {
                        
 
                         <div>
-                            <button type="submit" className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 bg-purple-600 border border-transparent rounded-md focus:outline-none hover:bg-purple-700 focus:bg-purple-700">Subscription</button>
+                            <button type="submit" className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 bg-secondary_color hover:bg-main_color border border-transparent rounded-md focus:outline-none focus:bg-main_color">Subscription</button>
                         </div>
 
                         

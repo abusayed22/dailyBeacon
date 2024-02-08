@@ -3,41 +3,41 @@
 import Slider from "./Slider"
 
 function Hero() {
-  
+
 
   return (
     <div>
 
-<section>
-  <div className="bg-black text-white py-20">
-    <div className="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
-      <div className="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
-        <h1 className="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">
-          TechFest
-        </h1>
-        <h2 className="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">
-          Space : The Timeless Infinity
-        </h2>
-        <p className="text-sm md:text-base text-gray-50 mb-4">
-          Explore your favourite events and register now to showcase your talent
-          and win exciting prizes.
-        </p>
-        <a
-          href="#"
-          className="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
-        >
-          Explore Now
-        </a>
-      </div>
-      <div className="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
-        <div className="h-48 flex flex-wrap content-center">
-          
-          <Slider />
+      <section className="bg-black w-full h-vh ">
+
+        <div className=" md:w-[90%] md:mx-auto flex items-center py-6  ">
+          {/* content  */}
+          <div className="w-1/3 hidden md:block">
+            <h1 className="text-3xl md:text-5xl p-2 text-body tracking-loose">
+              InsightFeed
+            </h1>
+            <h2 className="text-3xl md:text-5xl text-main_color leading-relaxed md:leading-snug mb-2">
+              Your Gateway to News, Commentary, and Community Engagement
+            </h2>
+            <p className="text-sm md:text-base text-gray-50 mb-4">
+              Empowering Your Voice: Join the Conversation, Share Your Views, and Stay Informed with InsightFeed
+            </p>
+            <button type="button" className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-secondary_color text-secondary_color hover:border-gray-500 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none">
+              Create Your Profile
+            </button>
+          </div>
+
+          {/* slider  */}
+          <div className="w-2/3 mx-auto">
+            <Slider />
+            <div className="w-full md:hidden flex justify-center">
+              <button type="button" className="mt-5 p-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-secondary_color text-secondary_color hover:border-gray-500 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none justify-center">
+                Create Your Profile
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
     </div>
   )

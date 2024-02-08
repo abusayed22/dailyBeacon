@@ -10,19 +10,23 @@ import {
 } from "phosphor-react";
 import Button from "../reuseble/Button";
 import LoadingButton from "../reuseble/LoadingButton";
+import { useRouter } from "next/navigation";
+
 
 
 function Navber(props) {
+  const router = useRouter()
 
 
   return (
     <div>
       {/* header 1  */}
       <header>
-        <Navbar fluid={true}>
-          <Navbar.Container className="flex items-center justify-around">
-            <Navbar.Brand>
+        <Navbar fluid={true} className="bg-body">
+          <Navbar.Container className="flex items-center justify-around ">
+            <Navbar.Brand >
               <img
+                onClick={() => router.push("/")}
                 src="/images/keep.svg"
                 alt="keep"
                 width="100"
@@ -128,7 +132,7 @@ function Navber(props) {
               className="fixed right-0 top-0 bg-white p-10 lg:!w-2/6 xl:!w-1/6 md:!w-2/6 w-1/2"
             >
               <Navbar.Container tag="ul" className="flex flex-col gap-5">
-                <Navbar.Brand>
+                <Navbar.Brand >
                   <img
                     src="/images/keep.svg"
                     alt="keep"
@@ -136,11 +140,11 @@ function Navber(props) {
                     height="40"
                   />
                 </Navbar.Brand>
-                {/* <Navbar.Link
+                <Navbar.Link
                   linkName="Home"
                   icon={<CaretDown size={20} />}
                   className="!py-0"
-                /> */}
+                />
 
                 {
                   props["data"]['categories'].map((item, i) => (
@@ -149,7 +153,7 @@ function Navber(props) {
                     //     <span className="capitalize">{item['name']}</span>
                     //   </a>
                     // </li>
-                    <Navbar.Link href={`/category-news?id=${item['id']}`} key={i} linkName={item['name']} className="!py-0 capitalize !text-main_color" />
+                    <Navbar.Link href={`/category-news?id=${item['id']}`} key={i} linkName={item['name']} className=" md:hidden !py-0 capitalize !text-main_color" />
                   ))
                 }
 
@@ -236,7 +240,7 @@ function Navber(props) {
       {/* header 2  */}
       <header className="bg-gradient-to-t from-gray-900 via-main_color to-violet-300 shadow-lg h-18 hidden md:flex ">
         <nav className="header-links contents font-semibold text-base lg:text-lg ">
-          <ul className="w-[90%] flex items-center justify-around ml-4 xl:ml-8 mr-auto">
+          <ul className="hidden w-[90%] md:flex items-center justify-around ml-4 xl:ml-8 mr-auto">
 
             {
               props["data"]['categories'].map((item, i) => (

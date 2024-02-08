@@ -1,6 +1,6 @@
 import React from 'react'
 import NewsCart from './NewsCart'
-import NewsTitle from './NewsTitle'
+import NewsTitle from '../reuseble/NewsTitle'
 import { PrismaClient } from '@prisma/client'
 
 // fetch data 
@@ -17,11 +17,10 @@ async function LatestNews() {
   return (
     <>
 
-      {/* ====== Blog Section Start */}
-      <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
+      <section className="w-[90%] mx-auto pt-20 lg:pt-[120px] pb-10 lg:pb-20">
         <div className="">
           <NewsTitle title={"Latest"} />
-          <div className='flex flex-wrap justify-center container mx-auto gap-12'>
+          <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
             {
               data?.news_list?.map((item,i) => (
                 <NewsCart key={i} news={item} features={data["features"]}/>
@@ -31,7 +30,6 @@ async function LatestNews() {
           </div>
         </div>
       </section>
-      {/* ====== Blog Section End */}
     </>
   )
 }

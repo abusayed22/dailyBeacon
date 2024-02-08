@@ -31,7 +31,7 @@ body {
     rgb(var(--background-start-rgb)); */
   margin: 0;
   padding: 0%;
-  background: red;
+  background: #BFC9CA ;
 }
 
 @layer utilities {
