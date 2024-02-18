@@ -1,9 +1,9 @@
 import React from 'react'
 
-function SemiCard() {
+function SemiCard({data}) {
     return (
         <>
-            <div className='overflow-hidden rounded-lg w-80 border border-body hover:shadow-black/50 hover:shadow-md transition duration-300 hover:scale-105'>
+            <div className=' overflow-hidden rounded-lg w-80 border border-body hover:shadow-black/50 hover:shadow-md transition duration-300 hover:scale-105'>
                 <img src='https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
                     className='aspect-video rounded-b-none'
                     alt='' />

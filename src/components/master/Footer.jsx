@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Footer(props) {
+
     return (
         <footer className="relative bg-main_color pt-8 pb-6">
             <div className="container mx-auto px-4">

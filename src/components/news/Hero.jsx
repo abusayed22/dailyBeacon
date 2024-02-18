@@ -10,7 +10,7 @@ function Hero() {
 
       <section className="bg-black w-full h-vh ">
 
-        <div className=" md:w-[90%] md:mx-auto flex items-center py-6  ">
+        <div className=" md:w-[90%] md:mx-auto flex items-center py-8 ">
           {/* content  */}
           <div className="w-1/3 hidden md:block">
             <h1 className="text-3xl md:text-5xl p-2 text-body tracking-loose">

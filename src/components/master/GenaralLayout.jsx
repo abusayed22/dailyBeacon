@@ -4,8 +4,8 @@ import Navber from "./Navber";
 
 // data fetching for layout
 const getData = async() => {
-  const socials = (await(await fetch(`${process.env.BASE_URL}/api/social`)).json())["data"];
-  const categories = (await(await fetch(`${process.env.BASE_URL}/api/category`)).json())["data"];
+  const socials = (await(await fetch(`${process.env.BASE_URL}/api/social`,{ next: { revalidate: 600 } })).json())["data"];
+  const categories = (await(await fetch(`${process.env.BASE_URL}/api/category`,{ next: { revalidate: 600 } })).json())["data"];
   return {socials:socials,categories:categories}
 }
 

@@ -18,6 +18,10 @@ function Navber(props) {
   const router = useRouter()
 
 
+  const login = () => {
+    router.push("/user")
+  }
+
   return (
     <div>
       {/* header 1  */}
@@ -34,7 +38,7 @@ function Navber(props) {
               />
             </Navbar.Brand>
             {/* input  */}
-            <div className="flex rounded-lg shadow-sm">
+            <div className="hidden md:flex rounded-lg shadow-sm">
               <input type="text" id="hs-search-box-with-loading-2" name="hs-search-box-with-loading-2" className="py-3 px-4 block md:w-[400px] border-secondary_color shadow-sm rounded-s-lg text-sm focus:z-10 focus:border-secondary_color focus:ring-secondary_color " placeholder="Search here..." />
               <button type="button" className="w-[2.875rem] h-[2.875rem] flex-shrink-0 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md border border-transparent bg-secondary_color text-white">
                 <MagnifyingGlass size={20} color="#FDFEFE" />
@@ -118,7 +122,9 @@ function Navber(props) {
                   </li>
                 </ul>
 
-                <Button text={"Login / Register"} bg={'secondary_color'} func={'login'} />
+                <a href="/user">
+                <Button  text={"Login / Register"} bg={'secondary_color'} func={"login"} />
+                </a>
                 {/* if loading  */}
                 {/* <LoadingButton bg={'secondary_color'} /> */}
 
@@ -226,7 +232,7 @@ function Navber(props) {
                       </a>
                     </li>
                   </ul>
-                  <Button text={"Login / Register"} bg={'secondary_color'} func={'login'} />
+                  <Button text={"Login / Register"} bg={'secondary_color'} func={() =>login} />
                   {/* if loading  */}
                   {/* <LoadingButton bg={'secondary_color'} /> */}
                 </div>
@@ -255,6 +261,18 @@ function Navber(props) {
 
           </ul>
         </nav>
+      </header>
+      <header className="md:hidden bg-gradient-to-t from-gray-900 via-main_color to-violet-300 shadow-lg w-full h-12">
+        {/* input  */}
+        <div className="flex rounded-lg shadow-sm w-full h-12">
+          <input type="text" id="hs-search-box-with-loading-2" name="hs-search-box-with-loading-2" className="h-12 block w-[90%] border-secondary_color shadow-sm rounded-s-lg text-sm focus:z-10 focus:border-secondary_color focus:ring-secondary_color " placeholder="Search here..." />
+          <button type="button" className="w-[10%] flex-shrink-0 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md border border-transparent bg-secondary_color text-white">
+            <MagnifyingGlass size={20} color="#FDFEFE" />
+          </button>
+          {/* if loading  */}
+          {/* <LoadingButton bg={"secondary_color"}/> */}
+        </div>
+
       </header>
     </div>
 

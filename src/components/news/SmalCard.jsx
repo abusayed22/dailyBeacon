@@ -1,12 +1,13 @@
 import React from 'react'
 
-function SmalCard() {
+function SmalCard({data}) {
+    
   return (
     <>
-      <div className='cursor-pointer overflow-hidden border border-body rounded-2xl w-[26rem] grid grid-cols-4 hover:shadow-black/50 hover:shadow-md transition duration-300 hover:scale-105'>
+      <a href={`/details-news?id=${data?.id}`} className='cursor-pointer overflow-hidden border border-body rounded-2xl md:w-[26rem] grid grid-cols-4 hover:shadow-black/50 hover:shadow-md transition duration-300 hover:scale-105'>
                     <div className='col-span-3 p-4 flex flex-col gap-2 justify-between'>
                         <h3 className='text-xl font-semibold line-clamp-2'>
-                            <p className='text-simple'>
+                            <p className='text-simple text-sm md:text-lg'>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla necessitatibus iusto laborum autem placeat
                                 aspernatur inventore eius deleniti reprehenderit?
                             </p>
@@ -20,7 +21,7 @@ function SmalCard() {
                             className='h-full aspect-square rounded-l-none'
                             alt='' />
                     </div>
-                </div>
+                </a>
     </>
   )
 }

@@ -13,11 +13,10 @@ const getData = async () => {
 
 async function PopularNews() {
   const data = await getData()
-  console.log(data["news_feature"])
   return (
     <>
       {/* ====== Blog Section Start */}
-      <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
+      <section className="w-[90%] mx-auto pt-20 lg:pt-[120px] pb-10 lg:pb-20">
         <div className="">
           <NewsTitle title={"Popular"} />
           <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>

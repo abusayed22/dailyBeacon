@@ -25,7 +25,6 @@ export async function POST(req,res){
 
 
     } catch (error) {
-        console.log(error)
         return NextResponse.json({status:"Register Failed!",data:error})
     }
 }
